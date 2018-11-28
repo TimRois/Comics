@@ -1,6 +1,6 @@
 module.exports = (connect) => {
     
-    const Release = connect.sequelize.define('release', {
+    const Release = connect.sequelize.define('releases', {
         id: {
             type: connect.Sequelize.INTEGER,
             primaryKey: true,
@@ -13,10 +13,7 @@ module.exports = (connect) => {
         price: {
             type: connect.Sequelize.INTEGER,
         },
-        comics: {
-            type: connect.Sequelize.STRING,
-           
-        },
+       
         date_issue: {
             type: connect.Sequelize.DATE,
            

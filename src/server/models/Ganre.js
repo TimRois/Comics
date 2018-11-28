@@ -1,6 +1,6 @@
 module.exports = (connect) => {
     
-    const Ganre = connect.sequelize.define('ganre', {
+    const Ganre = connect.sequelize.define('genres', {
         id: {
             type: connect.Sequelize.INTEGER,
             primaryKey: true,

@@ -1,24 +1,17 @@
 module.exports = (connect) => {
     
-    const Review = connect.sequelize.define('reviews', {
+    const Available_comic_strip = connect.sequelize.define('available_comics', {
         id: {
             type: connect.Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        number_review: {
+       
+        number_available_comic_strip: {
             type: connect.Sequelize.INTEGER,
-            unique: true
+            unique:true
         },
-        text: {
-            type: connect.Sequelize.STRING,
-        },
-    
-        
-    
-        
-
     });
 
-    return Review
+    return Available_comic_strip
 };

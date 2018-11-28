@@ -1,6 +1,6 @@
 module.exports = (connect) => {
     
-    const Orders = connect.sequelize.define('orders', {
+    const Order = connect.sequelize.define('orders', {
         id: {
             type: connect.Sequelize.INTEGER,
             primaryKey: true,
@@ -9,13 +9,6 @@ module.exports = (connect) => {
         number_order: {
             type: connect.Sequelize.INTEGER,
             unique: true
-        },
-        release: {
-            type: connect.Sequelize.STRING,
-        },
-        user: {
-            type: connect.Sequelize.STRING,
-           
         },
         purchase_date: {
             type: connect.Sequelize.DATE, 
@@ -26,5 +19,5 @@ module.exports = (connect) => {
 
     });
 
-    return Orders
+    return Order
 };

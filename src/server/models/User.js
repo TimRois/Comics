@@ -1,28 +1,25 @@
 module.exports = (connect) => {
     
-    const Comics = connect.sequelize.define('comics', {
+    const User = connect.sequelize.define('users', {
         id: {
             type: connect.Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
+    
         name: {
             type: connect.Sequelize.STRING,
             unique: true
         },
-        ganre: {
-            type: connect.Sequelize.STRING,
-        },
-        number_page: {
+    
+        password: {
             type: connect.Sequelize.INTEGER,
         },
-        author: {
+        password: {
             type: connect.Sequelize.STRING,
-        },
-    
-        
+        }
 
     });
 
-    return Comics
+    return User
 };

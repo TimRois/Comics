@@ -1,6 +1,6 @@
 module.exports = (connect) => {
     
-    const Role = connect.sequelize.define('role', {
+    const Role = connect.sequelize.define('roles', {
         id: {
             type: connect.Sequelize.INTEGER,
             primaryKey: true,
