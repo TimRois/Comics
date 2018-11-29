@@ -1,6 +1,6 @@
 module.exports = (connect) => {
     
-    const Authors = connect.sequelize.define('authors', {
+    const Author = connect.sequelize.define('authors', {
         id: {
             type: connect.Sequelize.INTEGER,
             primaryKey: true,
@@ -21,5 +21,5 @@ module.exports = (connect) => {
 
     });
 
-    return Authors
+    return Author
 };

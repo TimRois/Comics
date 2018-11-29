@@ -14,7 +14,9 @@ module.exports = (connect) => {
         number_page: {
             type: connect.Sequelize.INTEGER,
         },
-      
+        rating: {
+            type: connect.Sequelize.INTEGER,
+        },
 
     });
 

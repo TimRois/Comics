@@ -15,7 +15,7 @@ module.exports = (connect) => {
         password: {
             type: connect.Sequelize.INTEGER,
         },
-        password: {
+        email: {
             type: connect.Sequelize.STRING,
         }
 

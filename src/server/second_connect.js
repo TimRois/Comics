@@ -12,3 +12,4 @@ connection.sequelize
                 .catch(err => console.log(err));
 
 bd.sequelize.sync({ force : true }); 
+
