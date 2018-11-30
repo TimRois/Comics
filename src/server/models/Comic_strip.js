@@ -10,7 +10,6 @@ module.exports = (connect) => {
             type: connect.Sequelize.STRING,
             unique: true
         },
-       
         number_page: {
             type: connect.Sequelize.INTEGER,
         },

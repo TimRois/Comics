@@ -64,5 +64,6 @@ Review.belongsTo(Release);
 
 
 bd.sequelize = connect.sequelize;
+bd.Sequelize = connect.Sequelize;
 
 module.exports = bd;
