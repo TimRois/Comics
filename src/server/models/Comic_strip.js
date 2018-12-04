@@ -16,6 +16,9 @@ module.exports = (connect) => {
         rating: {
             type: connect.Sequelize.INTEGER,
         },
+        image: {
+            type: connect.Sequelize.STRING,
+        },
 
     });
 

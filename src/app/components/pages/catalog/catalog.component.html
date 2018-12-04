@@ -1,8 +1,8 @@
-   <div>
-   <mat-form-field class="example-full-width">
-      <input matInput placeholder="Фрагмент поиска" >
+   <div id = "searsh">
+   <mat-form-field class="searshPanel">
+      <input id = "firstInput" matInput placeholder="Фрагмент поиска" >
     </mat-form-field>
-    <button  mat-button>Поиск</button>
+    <button id = "firstButton" mat-button>Поиск</button>
     </div>
 
 
@@ -23,6 +23,31 @@
     </mat-expansion-panel>
   </mat-accordion>
 
+  <div id = card>
+    <mat-card 
+    *ngFor="let comics of bd">
+        <mat-card-header>
+          <div id = "image"></div>
+          <mat-card-title>
+            <span>{{comics.name}}</span>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="comics.image">
+        <mat-card-content>
+          <p>
+            Количество страниц:  {{comics.number_page}}
+          </p>
+          <p>
+             Рейтинг комикса: {{comics.rating}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Просмотреть</button>
+          <button mat-button>Купить</button>
+        </mat-card-actions>
+      </mat-card>
+      <div>
+    
 
 
 

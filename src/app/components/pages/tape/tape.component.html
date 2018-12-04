@@ -1,18 +1,19 @@
 <div id = card>
-<mat-card class="example-card">
+<mat-card *ngFor="let comics of bd">
     <mat-card-header>
-      <div id = "image"></div>
-      <mat-card-title>Комикс1</mat-card-title>
+      <mat-card-title>{{comics.name}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]="comics.image">
     <mat-card-content>
-      <p>
-       Описание Описание Описание Описание Описание Описание Описание Описание
-        Описание Описание Описание Описание Описание Описание Описание Описание Описание
-      </p>
+        <p>
+            Количество страниц:  {{comics.number_page}}
+          </p>
+          <p>
+             Рейтинг комикса: {{comics.rating}}
+          </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Лайкнуть</button>
+      <button mat-button>Просмотреть</button>
       <button mat-button>Купить</button>
     </mat-card-actions>
   </mat-card>

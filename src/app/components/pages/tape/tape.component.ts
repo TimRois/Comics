@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TapeService } from 'src/app/services/tape/tape.service';
 
 @Component({
   selector: 'app-tape',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TapeComponent implements OnInit {
 
-  constructor() { }
+  bd: any[];
+
+  constructor(private service: TapeService) { }
 
   ngOnInit() {
+    this.getAll();
+  }
+  getAll(){
+    this.service.getAll().subscribe(data => this.bd = data);
   }
 
 }

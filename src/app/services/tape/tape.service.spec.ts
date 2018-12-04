@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AutoService } from './auto.service';
+import { TapeService } from './tape.service';
 
-describe('AutoService', () => {
+describe('TapeService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AutoService = TestBed.get(AutoService);
+    const service: TapeService = TestBed.get(TapeService);
     expect(service).toBeTruthy();
   });
 });
