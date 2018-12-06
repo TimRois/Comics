@@ -30,6 +30,7 @@ import { MainService } from './services/main/main.service';
 import { PersonalCabinetService } from './services/personal-cabinet/personal-cabinet.service';
 import { RegistrationService } from './services/registration/registration.service';
 import { AutorizationService } from './services/autorization/autorization.service';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { AutorizationService } from './services/autorization/autorization.servic
     MatCardModule,
     FlexLayoutModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule
   ],
   providers: [
     CatalogService,
