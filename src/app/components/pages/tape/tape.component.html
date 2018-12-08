@@ -1,11 +1,11 @@
-<div id = card>
+<div  [@fadeIn]="fadeIn" id = card>
 <mat-card *ngFor="let comics of bd">
     <mat-card-header>
       <mat-card-title>{{comics.name}}</mat-card-title>
     </mat-card-header>
     <img mat-card-image [src]="comics.image">
     <mat-card-content>
-        <p>
+          <p>
             Количество страниц:  {{comics.number_page}}
           </p>
           <p>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main/main.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  bd: any[];
+  bd2: any[];
+
+  constructor(private service: MainService) { }
 
   ngOnInit() {
+    this.getNew();
+    this.getTop();
   }
-
+  getTop(){
+    this.service.getTop().subscribe(data => this.bd = data);
+  }
+  getNew(){
+    this.service.getNew().subscribe(data => this.bd2 = data);
+  }
 }

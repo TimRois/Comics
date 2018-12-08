@@ -1,12 +1,53 @@
+<div id ="page">
+
+<img class="logo" src="../../../../assets/image/new-logo.jpg">
 <mat-tab-group dynamicHeight>
-  <mat-tab id ="label1" label="MostPopylar">
+  <mat-tab  label="MostPopylar">
     <div class="MostPopylarBox mat-elevation-z4">
-      Popylar Comics
+      <mat-card *ngFor="let comics of bd">
+        <mat-card-header>
+          <mat-card-title>{{comics.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="comics.image">
+        <mat-card-content>
+              <p>
+                Количество страниц:  {{comics.number_page}}
+              </p>
+              <p>
+                 Рейтинг комикса: {{comics.rating}}
+              </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Просмотреть</button>
+          <button mat-button>Купить</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </mat-tab>
   <mat-tab label="MostNew">
     <div class="MostNewBox mat-elevation-z4">
-     New comics
+      <mat-card *ngFor="let comics of bd2">
+        <mat-card-header>
+          <mat-card-title>{{comics.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="comics.image">
+        <mat-card-content>
+              <p>
+                Количество страниц:  {{comics.number_page}}
+              </p>
+              <p>
+                 Рейтинг комикса: {{comics.rating}}
+              </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Просмотреть</button>
+          <button mat-button>Купить</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </mat-tab>
 </mat-tab-group>
+
+</div>
+
+

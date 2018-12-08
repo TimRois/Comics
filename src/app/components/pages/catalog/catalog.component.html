@@ -23,7 +23,7 @@
     </mat-expansion-panel>
   </mat-accordion>
 
-  <div id = card>
+  <div [@fadeIn]="fadeIn" id = card>
     <mat-card 
     *ngFor="let comics of bd">
         <mat-card-header>
