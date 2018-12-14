@@ -1,7 +1,9 @@
 const connect = require("./connect");
 
 const Author = require("./models/Author")(connect);
-const Available_comic_strip = require("./models/Available_comic_strip")(connect);
+const Available_comic_strip = require("./models/Available_comic_strip")(
+  connect
+);
 const Comic_strip = require("./models/Comic_strip")(connect);
 const Ganre = require("./models/Ganre")(connect);
 const Order = require("./models/Order")(connect);
@@ -13,9 +15,7 @@ const Ganre_comics = require("./models/Ganre_comics")(connect);
 const Order_detail = require("./models/Order_detail")(connect);
 const Role_user = require("./models/Role_user")(connect);
 
-
 const bd = {};
-
 
 bd.Author = Author;
 bd.Available_comic_strip = Available_comic_strip;
@@ -59,9 +59,6 @@ User.hasMany(Review);
 Release.hasMany(Review);
 Review.belongsTo(User);
 Review.belongsTo(Release);
-
-
-
 
 bd.sequelize = connect.sequelize;
 bd.Sequelize = connect.Sequelize;

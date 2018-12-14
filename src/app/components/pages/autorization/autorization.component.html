@@ -1,13 +1,13 @@
-<div [@jackInTheBox]="jackInTheBox" >
-<form class="example-form">
+<div [@jackInTheBox]="jackInTheBox">
+  <mat-form-field id="first-matform" class="example-full-width">
+    <input matInput [(ngModel)]="name" placeholder="Введите ваш логин" />
+  </mat-form-field>
 
-  <mat-form-field id = "first-matform" class="example-full-width" >
-    <input   matInput placeholder="Введите ваш логин" >
+  <mat-form-field id="second-matform" class="example-full-width">
+    <input matInput [(ngModel)]="password" placeholder="Введите ваш пароль" />
   </mat-form-field>
-<br>
-  <mat-form-field id = "second-matform" class="example-full-width">
-    <input matInput placeholder="Введите ваш пароль">
-  </mat-form-field>
-</form>
-<button id = "first-button" mat-raised-button>Авторизироваться</button>
+
+  <button id="first-button" mat-button mat-dialog-close (click)="login()">
+    Авторизироваться
+  </button>
 </div>
