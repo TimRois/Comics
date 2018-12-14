@@ -34,6 +34,8 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { GuardService } from "./services/guard/guard.service";
 import { UserRoleService } from "./services/user_role/user-role.service";
 import { JwtModule } from "@auth0/angular-jwt";
+import { ReleaseComponent } from "./components/pages/release/release.component";
+import { ReleaseService } from "./services/release/release.service";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -48,7 +50,8 @@ export function tokenGetter() {
     AutorizationComponent,
     CatalogComponent,
     TapeComponent,
-    PersonalCabinetComponent
+    PersonalCabinetComponent,
+    ReleaseComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +88,8 @@ export function tokenGetter() {
     RegistrationService,
     AutorizationService,
     UserRoleService,
-    GuardService
+    GuardService,
+    ReleaseService
   ],
   bootstrap: [AppComponent]
 })

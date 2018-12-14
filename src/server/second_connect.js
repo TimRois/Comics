@@ -20,7 +20,10 @@ app.use(
       "/comics_strip/all",
       "/comics_strip/top",
       "/comics_strip/new",
-      "/role_users/logIn"
+      "/role_users/logIn",
+      "/available_comics/all",
+      /\/releases*/,
+      /\/favicon*/
     ]
   })
 );
@@ -30,7 +33,7 @@ connection.sequelize
   .then(() => console.log("YSE NORMAS,MOGNO PIT"))
   .catch(err => console.log(err));
 
-//bd.sequelize.sync({ force : true });
+//bd.sequelize.sync({ alter: true });
 
 app.listen(8080, "localhost", () => {
   console.log("Server startanyl))");

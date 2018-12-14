@@ -40,6 +40,9 @@ Role_user.belongsTo(User);
 Role.hasMany(Role_user);
 User.hasMany(Role_user);
 
+Release.belongsTo(Comic_strip);
+Comic_strip.hasMany(Release);
+
 Order_detail.belongsTo(User);
 Order_detail.belongsTo(Release);
 Order_detail.belongsTo(Order);
@@ -48,9 +51,9 @@ User.hasMany(Order_detail);
 Release.hasMany(Order_detail);
 
 Available_comic_strip.belongsTo(User);
-Available_comic_strip.belongsTo(Comic_strip);
+Available_comic_strip.belongsTo(Release);
 User.hasMany(Available_comic_strip);
-Comic_strip.hasMany(Available_comic_strip);
+Release.hasMany(Available_comic_strip);
 
 Author.hasMany(Release);
 Release.belongsTo(Author);

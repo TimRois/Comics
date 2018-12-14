@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MainService } from "src/app/services/page/main/main.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-main",
@@ -10,7 +11,7 @@ export class MainComponent implements OnInit {
   bd: any[];
   bd2: any[];
 
-  constructor(private service: MainService) {}
+  constructor(private service: MainService, private route: Router) {}
 
   ngOnInit() {
     this.getNew();
@@ -21,5 +22,8 @@ export class MainComponent implements OnInit {
   }
   getNew() {
     this.service.getNew().subscribe(data => (this.bd2 = data));
+  }
+  view_release(id_comics: number) {
+    this.route.navigate(["release", id_comics]);
   }
 }

@@ -7,7 +7,7 @@ module.exports = app => {
 
     app.get(controller + "/all", (req, res)=>{
         bd.Comic_strip.findAll({
-            attributes: ['name', 'number_page', 'rating','image'],
+            attributes: ['id','name', 'number_page', 'rating','image'],
             
         }).then(data => {res.send(data); console.log(data)});
         
