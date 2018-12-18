@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ReleaseService } from "src/app/services/release/release.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-release",
@@ -8,7 +8,11 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./release.component.sass"]
 })
 export class ReleaseComponent implements OnInit {
-  constructor(private service: ReleaseService, private route: ActivatedRoute) {}
+  constructor(
+    private service: ReleaseService,
+    private route: ActivatedRoute,
+    private nav: Router
+  ) {}
 
   id_comics: number;
 
@@ -25,5 +29,10 @@ export class ReleaseComponent implements OnInit {
         .GetRelease(this.id_comics)
         .subscribe(data => (this.releases = data));
     });
+  }
+
+  openRelease(releaseId: number) {
+    console.log(releaseId);
+    this.nav.navigate(["releaseView", releaseId]);
   }
 }

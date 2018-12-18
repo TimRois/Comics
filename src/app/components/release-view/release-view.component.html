@@ -1,0 +1,29 @@
+<div
+  fxLayout="row"
+  fxLayout.lt-md="column"
+  fxLayoutAlign="center"
+  *ngIf="images.length !== 0"
+>
+  <mat-card fxFlex="80" style="margin: 2rem">
+    <mat-card-title-group>
+      <mat-card-title>Simple Example</mat-card-title>
+      <mat-card-subtitle>version: 1.3.0</mat-card-subtitle>
+    </mat-card-title-group>
+
+    <mat-card-content>
+      <ngx-image-gallery
+        #ngxImageGallery
+        [images]="images"
+        [conf]="conf"
+        (onOpen)="galleryOpened($event)"
+        (onClose)="galleryClosed()"
+        (onImageClicked)="galleryImageClicked($event)"
+        (onImageChange)="galleryImageChanged($event)"
+        (onDelete)="deleteImage($event)"
+      >
+      </ngx-image-gallery>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="images.length === 0"><h1>Загрузка ...</h1></div>

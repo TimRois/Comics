@@ -36,6 +36,13 @@ import { UserRoleService } from "./services/user_role/user-role.service";
 import { JwtModule } from "@auth0/angular-jwt";
 import { ReleaseComponent } from "./components/pages/release/release.component";
 import { ReleaseService } from "./services/release/release.service";
+import { FooterComponent } from "./components/footer/footer.component";
+import { ReleaseViewComponent } from "./components/release-view/release-view.component";
+import { Angular2ImageGalleryModule } from "angular2-image-gallery";
+import { NgxImageGalleryModule } from "ngx-image-gallery";
+import { KeysPipe } from "./keys.pipe";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -51,7 +58,10 @@ export function tokenGetter() {
     CatalogComponent,
     TapeComponent,
     PersonalCabinetComponent,
-    ReleaseComponent
+    ReleaseComponent,
+    FooterComponent,
+    ReleaseViewComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
@@ -67,11 +77,15 @@ export function tokenGetter() {
     MatExpansionModule,
     MatSidenavModule,
     MatListModule,
+    Angular2ImageGalleryModule,
     MatCardModule,
     FlexLayoutModule,
     LayoutModule,
     HttpClientModule,
     MatTabsModule,
+    ReactiveFormsModule,
+    NgxImageGalleryModule,
+    MatButtonToggleModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

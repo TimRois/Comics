@@ -20,6 +20,16 @@ module.exports = app => {
     });
   });
 
+  app.get(controller + "/findById", (req, res) => {
+    bd.Release.findAll({
+      include: [{ model: bd.Comic_strip }],
+
+      where: {
+        id: Number(req.query.id)
+      }
+    }).then(data => res.send(data));
+  });
+
   app.get(controller + "/for_comics", (req, res) => {
     bd.Release.findAll({
       arguments: ["id"],

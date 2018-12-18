@@ -16,4 +16,12 @@ export class ReleaseService {
       }
     });
   }
+
+  findById(id: number): Observable<any[]> {
+    return this.http.get<any[]>(this.url + "/findById", {
+      params: {
+        id: id.toString()
+      }
+    });
+  }
 }

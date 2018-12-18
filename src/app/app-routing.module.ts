@@ -7,6 +7,7 @@ import { PersonalCabinetComponent } from "./components/pages/personal-cabinet/pe
 import { AutorizationComponent } from "./components/pages/autorization/autorization.component";
 import { RegistrationComponent } from "./components/pages/registration/registration.component";
 import { ReleaseComponent } from "./components/pages/release/release.component";
+import { ReleaseViewComponent } from "./components/release-view/release-view.component";
 
 const routes: Routes = [
   { path: "main", component: MainComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: "personal-cabinet", component: PersonalCabinetComponent },
   { path: "autorization", component: AutorizationComponent },
   { path: "registration", component: RegistrationComponent },
-  { path: "release/:id", component: ReleaseComponent }
+  { path: "release/:id", component: ReleaseComponent },
+  { path: "releaseView/:id", component: ReleaseViewComponent }
 ];
 
 @NgModule({

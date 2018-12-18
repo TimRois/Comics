@@ -18,6 +18,10 @@ module.exports = connect => {
     },
     path: {
       type: connect.Sequelize.STRING
+    },
+
+    pages: {
+      type: connect.Sequelize.INTEGER
     }
   });
 

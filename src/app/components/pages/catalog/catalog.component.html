@@ -1,53 +1,47 @@
-   <div id = "searsh">
-   <mat-form-field class="searshPanel">
-      <input id = "firstInput" matInput placeholder="Фрагмент поиска" >
-    </mat-form-field>
-    <button id = "firstButton" mat-button>Поиск</button>
-    </div>
-
+<div id="searsh">
+  <mat-form-field class="searshPanel">
+    <input id="firstInput" matInput placeholder="Фрагмент поиска" />
+  </mat-form-field>
+  <button id="firstButton" mat-button>Поиск</button>
+</div>
 
 <mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Больше критериев для поиска </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-action-row>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle>Критерий 1</mat-button-toggle>
+        <mat-button-toggle>Критерий 2</mat-button-toggle>
+        <mat-button-toggle>Критерий 3</mat-button-toggle>
+        <mat-button-toggle>Критерий 4</mat-button-toggle>
+        <mat-button-toggle>Критерий 5</mat-button-toggle>
+        <mat-button-toggle>Критерий 6</mat-button-toggle>
+        <mat-button-toggle>Критерий 6</mat-button-toggle>
+        <mat-button-toggle>Критерий 7</mat-button-toggle>
+        <mat-button-toggle>Критерий 8</mat-button-toggle>
+      </mat-button-toggle-group>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-          <mat-panel-title>
-              Больше критериев для поиска
-          </mat-panel-title>
-          
-      </mat-expansion-panel-header>
-  
-      <mat-action-row>
-          <button  mat-button>Критерий1</button>
-          <button  id = "lastbutton" mat-button>+</button>
-        </mat-action-row>
-    </mat-expansion-panel>
-  </mat-accordion>
-
-  <div [@fadeIn]="fadeIn" id = card>
-    <mat-card 
-    *ngFor="let comics of bd">
-        <mat-card-header>
-          <div id = "image"></div>
-          <mat-card-title>
-            <span>{{comics.name}}</span>
-          </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image [src]="comics.image">
-        <mat-card-content>
-          <p>
-            Количество страниц:  {{comics.number_page}}
-          </p>
-          <p>
-             Рейтинг комикса: {{comics.rating}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Просмотреть</button>
-          <button mat-button>Купить</button>
-        </mat-card-actions>
-      </mat-card>
-      <div>
-    
-
-
-
+<div [@fadeIn]="fadeIn" id="card">
+  <mat-card *ngFor="let comics of bd">
+    <mat-card-header>
+      <div id="image"></div>
+      <mat-card-title>
+        <span>{{ comics.name }}</span>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="comics.image" />
+    <mat-card-content>
+      <p>Количество страниц: {{ comics.number_page }}</p>
+      <p>Рейтинг комикса: {{ comics.rating }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Просмотреть</button> <button mat-button>Купить</button>
+    </mat-card-actions>
+  </mat-card>
+  <div></div>
+</div>

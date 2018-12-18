@@ -1,2 +1,24 @@
-<img class="logo" *ngFor="let rel of releases" [src]="image(rel.path)" />
-<p>{{ releases.lenght }}</p>
+<div
+  *ngIf="releases.length !== 0"
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutGap="0.5%"
+  flexLayoutAlign="flex-start"
+>
+  <mat-card
+    fxFlex="0 1 calc(33.3% - 4%)"
+    fxFlex.lt-md="0 1 calc(50% - 3%)"
+    fxFlex.lt-sm="100%"
+    *ngFor="let rel of releases"
+  >
+    <mat-card-header>
+      <mat-card-title> {{ rel.name }} </mat-card-title>
+    </mat-card-header>
+    <img class="logo" [src]="image(rel.path)" />
+    <mat-card-actions>
+      <button mat-raised-button (click)="openRelease(rel.id)">
+        Просмотреть
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,13 +1,43 @@
-<div [@jackInTheBox]="jackInTheBox" >
-<form class="example-form">
-
-        <mat-form-field id = "first-matform" class="example-full-width" >
-          <input   matInput placeholder="Введите ваш логин" >
-        </mat-form-field>
-      <br>
-        <mat-form-field id = "second-matform" class="example-full-width">
-          <input matInput placeholder="Введите ваш пароль">
-        </mat-form-field>
-      </form>
-      <button id = "first-button" mat-raised-button>Зарегистрироваться</button>
+<div [@jackInTheBox]="jackInTheBox">
+  <form [formGroup]="myFirstReactiveForm">
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="name"
+        formControlName="name"
+        placeholder="Введите ваш логин"
+      /><br />
+      <div class="error" *ngIf="isControlInvalid('name')">
+        Ошибка ввода логина
+      </div>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="password"
+        formControlName="password"
+        placeholder="Введите ваш password"
+      />
+      <br />
+      <div class="error" *ngIf="isControlInvalid('password')">
+        Ошибка ввода пароля
+      </div>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="email"
+        formControlName="email"
+        placeholder="Введите ваш email"
+      />
+      <br />
+      <div class="error" *ngIf="isControlInvalid('email')">
+        Ошибка ввода email
+      </div>
+    </mat-form-field>
+    <br />
+  </form>
+  <button id="reg-button" mat-button mat-dialog-close>Регистрация</button>
 </div>
