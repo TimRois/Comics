@@ -6,10 +6,12 @@ module.exports = app => {
   app.get(controller + "/all", (req, res) => {
     bd.Comic_strip.findAll({
       attributes: ["id", "name", "rating", "image"]
-    }).then(data => {
-      res.send(data);
-      console.log(data);
-    });
+    })
+      .then(data => {})
+      .then(data => {
+        res.send(data);
+        console.log(data);
+      });
   });
   app.get(controller + "/all2", (req, res) => {
     bd.Comic_strip.findAll({

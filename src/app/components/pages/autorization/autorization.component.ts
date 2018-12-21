@@ -14,7 +14,6 @@ import { Router } from "@angular/router";
 })
 export class AutorizationComponent implements OnInit {
   jackInTheBox: any;
-
   user: any;
   name: string = "";
   password: string = "";

@@ -21,7 +21,16 @@ app.use(
       "/comics_strip/top",
       "/comics_strip/new",
       "/role_users/logIn",
+      "/role_users/add",
+      "/ganre_comics/all/filter",
+      "/ganre_comics/drama",
+      "/ganre_comics/fantastic",
+      "/ganre_comics/dc",
+      "/ganre_comics/marvel",
+      "/ganre_comics/kriminal",
       "/available_comics/all",
+      "/available_comics/avail",
+      "/users/addUser",
       /\/releases*/,
       /\/favicon*/
     ]

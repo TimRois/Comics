@@ -6,6 +6,13 @@
     [@tada]="link.isClicked ? 'in' : 'on'"
     >{{ link.title }}
   </span>
+  <div *ngIf="ChackAut()">
+    <img src="../../../../assets/image/man.png" /> <br />
+  </div>
+  <div *ngIf="!ChackAut()">
+    <img src="../../../../assets/image/un_man.png" /> <br />
+  </div>
 </mat-toolbar>
+
 <router-outlet></router-outlet>
 <app-footer></app-footer>

@@ -28,8 +28,6 @@ import { CatalogService } from "./services/page/catalog/catalog.service";
 import { TapeService } from "./services/page/tape/tape.service";
 import { MainService } from "./services/page/main/main.service";
 import { PersonalCabinetService } from "./services/page/personal-cabinet/personal-cabinet.service";
-import { RegistrationService } from "./services/page/registration/registration.service";
-import { AutorizationService } from "./services/page/autorization/autorization.service";
 import { MatTabsModule } from "@angular/material/tabs";
 import { GuardService } from "./services/guard/guard.service";
 import { UserRoleService } from "./services/user_role/user-role.service";
@@ -43,6 +41,7 @@ import { NgxImageGalleryModule } from "ngx-image-gallery";
 import { KeysPipe } from "./keys.pipe";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { AvailableReleaseService } from "./services/available_release/available-release.service";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -99,11 +98,10 @@ export function tokenGetter() {
     TapeService,
     MainService,
     PersonalCabinetService,
-    RegistrationService,
-    AutorizationService,
     UserRoleService,
     GuardService,
-    ReleaseService
+    ReleaseService,
+    AvailableReleaseService
   ],
   bootstrap: [AppComponent]
 })

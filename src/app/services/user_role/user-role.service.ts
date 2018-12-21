@@ -49,7 +49,7 @@ export class UserRoleService {
     return this.jwt.decodeToken(localStorage.getItem("token"));
   }
 
-  add(userRole: any) {
-    this.http.post<any[]>(this.commonUrl + "/add", userRole).subscribe();
+  add(role_users: any) {
+    this.http.post<any[]>(this.commonUrl + "/add", role_users).subscribe();
   }
 }
