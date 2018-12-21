@@ -1,7 +1,7 @@
 <mat-toolbar>
   <span
-    routerLink="{{link.path}}"
-    *ngFor="let link of links"
+    routerLink="{{ link.path }}"
+    *ngFor="let link of getLinks()"
     (click)="link.isClicked = !link.isClicked"
     [@tada]="link.isClicked ? 'in' : 'on'"
     >{{ link.title }}

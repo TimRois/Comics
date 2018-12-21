@@ -29,7 +29,7 @@ export class AutorizationComponent implements OnInit {
     };
     this.service.login(user).subscribe(users => {
       this.user = users[0];
-      this.route.navigate(["personal-cabinet"]);
+      this.route.navigate(["main"]);
     });
   }
 }

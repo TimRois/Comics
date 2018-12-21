@@ -42,6 +42,7 @@ import { KeysPipe } from "./keys.pipe";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { AvailableReleaseService } from "./services/available_release/available-release.service";
+import { LinkService } from "./services/links/link.service";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -98,6 +99,7 @@ export function tokenGetter() {
     TapeService,
     MainService,
     PersonalCabinetService,
+    LinkService,
     UserRoleService,
     GuardService,
     ReleaseService,
