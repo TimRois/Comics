@@ -30,6 +30,7 @@ app.use(
       "/ganre_comics/kriminal",
       "/available_comics/all",
       "/available_comics/avail",
+      "/available_comics/add",
       "/users/addUser",
       /\/releases*/,
       /\/favicon*/

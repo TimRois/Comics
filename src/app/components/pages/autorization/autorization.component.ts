@@ -3,6 +3,7 @@ import { trigger, transition, useAnimation } from "@angular/animations";
 import { UserRoleService } from "src/app/services/user_role/user-role.service";
 import { jackInTheBox } from "ng-animate";
 import { Router } from "@angular/router";
+import { TestBed } from "@angular/core/testing";
 
 @Component({
   selector: "app-autorization",
@@ -17,6 +18,7 @@ export class AutorizationComponent implements OnInit {
   user: any;
   name: string = "";
   password: string = "";
+  id_user: number;
 
   constructor(private service: UserRoleService, private route: Router) {}
 

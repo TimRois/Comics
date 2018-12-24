@@ -45,7 +45,6 @@ export class UserRoleService {
   }
 
   getCurrentUser() {
-    console.log(this.jwt.decodeToken(localStorage.getItem("token")));
     return this.jwt.decodeToken(localStorage.getItem("token"));
   }
 

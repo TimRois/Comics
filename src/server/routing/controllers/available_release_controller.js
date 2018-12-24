@@ -24,4 +24,17 @@ module.exports = app => {
       console.log(data);
     });
   });
+
+  app.post(controller + "/add", (req, res) => {
+    console.log(req.body.id_user.user.id);
+    bd.Available_comic_strip.create(
+      {
+        userId: req.body.id_user.user.id,
+        releaseId: req.body.rel_id
+      },
+      { include: [{ model: bd.User }, { model: bd.Release }] }
+    ).then(data => {
+      res.send(data);
+    });
+  });
 };

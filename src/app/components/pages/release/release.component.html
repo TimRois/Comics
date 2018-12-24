@@ -6,10 +6,11 @@
   flexLayoutAlign="flex-start"
 >
   <mat-card
+    [ngClass]="{ available: releases.available[i] }"
     fxFlex="0 1 calc(33.3% - 4%)"
     fxFlex.lt-md="0 1 calc(50% - 3%)"
     fxFlex.lt-sm="100%"
-    *ngFor="let rel of releases"
+    *ngFor="let rel of releases.releases; let i = index"
   >
     <mat-card-header>
       <mat-card-title> {{ rel.name }} </mat-card-title>
@@ -19,7 +20,14 @@
       <button mat-raised-button (click)="openRelease(rel.id)">
         Просмотреть
       </button>
-      <button mat-raised-button>Купить</button>
+      <button
+        *ngIf="!releases.available[i] && id_user"
+        mat-raised-button
+        (click)="addAvailRelease(rel.id)"
+      >
+        Купить
+      </button>
+      <span *ngIf="releases.available[i]">Куплен</span>
     </mat-card-actions>
   </mat-card>
 </div>

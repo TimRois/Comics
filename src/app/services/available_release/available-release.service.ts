@@ -15,8 +15,10 @@ export class AvailableReleaseService {
       }
     });
   }
-
-  add(available_comics: any) {
-    this.http.post<any[]>(this.url + "/add", available_comics).subscribe();
+  getAll(): Observable<any[]> {
+    return this.http.get<any[]>(this.url + "/all");
+  }
+  add(available_comics: any): Observable<any[]> {
+    return this.http.post<any[]>(this.url + "/add", available_comics);
   }
 }

@@ -16,33 +16,36 @@ import { fadeIn } from "ng-animate";
 export class PersonalCabinetComponent implements OnInit {
   constructor(
     private service: UserRoleService,
-    private service2: AvailableReleaseService,
-    private service3: CatalogService,
+    private Avail_rel: AvailableReleaseService,
+    private catService: CatalogService,
     private route: Router
   ) {}
   name: string;
-  id_user: number;
+  id_user: any;
   req: any[];
   fadeIn: any;
   ngOnInit() {
+    this.id_user = this.service.getCurrentUser();
     this.getAvailable();
+    alert("Привет " + this.id_user.user.name + " !)");
   }
-
-  test() {
-    alert(this.service.getCurrentUser());
-    alert(this.service.loggedIn);
-    alert(this.name);
+  image(path: string): string {
+    console.log(path);
+    return "../../../../" + path + "/1.jpg";
   }
 
   getAvailable() {
-    //this.service2.GetAvail().subscribe(date => this.req == date);
+    this.Avail_rel.GetAvail(this.id_user.user.id).subscribe(
+      date => (this.req = date)
+    );
   }
   logout() {
     this.service.logout();
     //alert("polzovatel vishel");
     this.route.navigate(["autorization"]);
   }
-  view_release(id_comics: number) {
-    this.route.navigate(["release", id_comics]);
+  openRelease(releaseId: number) {
+    console.log(releaseId);
+    this.route.navigate(["releaseView", releaseId]);
   }
 }
